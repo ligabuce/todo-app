@@ -8,5 +8,5 @@ pip install Flask
 ## Papildus nepieciešams turbo-flask priekš Hotwire:
 pip install turbo-flask
 
-## Tīmekļa lietojumprogrammu var palaist termināli ar komandu:
+## Tīmekļa lietojumprogrammu var palaist uz lokālā serverī ar komandu:
 flask --app app run
