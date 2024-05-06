@@ -1,0 +1,6 @@
+<turbo-frame id="todo-edit-{{ todo.id }}">
+  <span {% if todo.status %} style="text-decoration: line-through" {% endif %}>
+    {{ todo.task }}
+  </span>
+</turbo-frame>
+

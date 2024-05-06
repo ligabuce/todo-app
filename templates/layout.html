@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <title>To Do App</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <script src="/static/js/htmx-1.9.11.js"></script>
+    {{ turbo() }}
+  </head>
+  <body hx-boost="true">
+    <!-- <meta name="turbo-refresh-method" content="morph"> ,  chose hx-boost bc it is shorter 
+      and without it some hx-features after adding new tasks didnt work for some reason-->
+    <main>
+      <header>
+        <h1>Prototips</h1>
+        <p>Tīmekļa lietojumprogramma izstrādāta ar Flask, htmx un Hotwire</p>
+      </header>
+
+      <hr />
+      <!-- tried to do this with hx-post, 
+  but it automatically replaced this form window with the response and made a mess, 
+  i would have to seperate my html code more to make it work efficently, 
+  decided against it bc the way i se the form rn is how it usually can be used already 
+  and has all the functionality i need -->
+      <form action="{{ url_for('add') }}" method="POST">
+        <input type="text" name="task" />
+        <button type="submit">Pievienot</button>
+      </form>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Status</th>
+            <th>Uzdevums</th>
+            <th>Darbības</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for todo in todos %} {% include 'todo.html' %} {% endfor %}
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>
