@@ -7,8 +7,6 @@
     {{ turbo() }}
   </head>
   <body hx-boost="true">
-    <!-- <meta name="turbo-refresh-method" content="morph"> ,  chose hx-boost bc it is shorter 
-      and without it some hx-features after adding new tasks didnt work for some reason-->
     <main>
       <header>
         <h1>Prototips</h1>
@@ -16,11 +14,6 @@
       </header>
 
       <hr />
-      <!-- tried to do this with hx-post, 
-  but it automatically replaced this form window with the response and made a mess, 
-  i would have to seperate my html code more to make it work efficently, 
-  decided against it bc the way i se the form rn is how it usually can be used already 
-  and has all the functionality i need -->
       <form action="{{ url_for('add') }}" method="POST">
         <input type="text" name="task" />
         <button type="submit">Pievienot</button>

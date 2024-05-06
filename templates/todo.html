@@ -10,10 +10,6 @@
     {% include 'todo_task.html' %}
   </td>
   <td>
-    <!--Cant use just button with hx-get bc then it by default 
-      also uses hx-target and hx-swap and i would have to set them to none 
-      and Then use Turbo Frame and all together it is not more effective 
-      than just using a form-->
     <form hx-boost="false" action="{{ url_for('edit', id=todo.id) }}" data-turbo-frame="todo-edit-{{ todo.id }}">
       <button type="submit" class="change">Labot</button>
     </form>
