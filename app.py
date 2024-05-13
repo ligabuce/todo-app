@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for
-from turbo_flask import Turbo
+#from turbo_flask import Turbo
 from todos_model import Todo
 
 app = Flask(__name__, template_folder="templates")
-turbo = Turbo(app)
+#turbo = Turbo(app)
 
 todos = [Todo(task="Piemēra uzdevums", status=False),
          Todo(task="Izdarīts piemēra uzdevums", status=True)]
