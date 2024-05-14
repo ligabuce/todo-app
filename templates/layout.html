@@ -3,7 +3,9 @@
   <head>
     <title>To Do App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Darāmo darbu pārvaldības lietojumprogrammas prototips, Darba autors: Līga Buce">
     <link rel="stylesheet" href="/static/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org/dist/htmx.min.js" defer></script>
     {{ turbo() }}
   </head>
   <body hx-boost="true">
@@ -15,7 +17,7 @@
 
       <hr />
       <form action="{{ url_for('add') }}" method="POST">
-        <input type="text" name="task" />
+        <input type="text" name="task" aria-label="Pievieno uzdevumu"/>
         <button type="submit">Pievienot</button>
       </form>
 
@@ -32,7 +34,5 @@
         </tbody>
       </table>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/htmx.org/dist/htmx.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@hotwired/turbo@7.0.0/builds/turbo.min.js" defer></script>
   </body>
 </html>

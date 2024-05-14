@@ -20,7 +20,7 @@ body {
   h1 {
     font-size: 2em;
     margin-bottom: 5px;
-    color: #ff7f50;
+    color: #a54a29;
   }
   
   p {
@@ -42,7 +42,7 @@ body {
   
   button {
     padding: 8px 20px;
-    background-color: #ff7f50;
+    background-color: #a54a29;
     border: none;
     border-radius: 5px;
     color: #fff;

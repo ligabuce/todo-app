@@ -1,6 +1,6 @@
 <tr>
   <td>
-    <input type="checkbox"
+    <input type="checkbox" aria-label="Atzīmē"
             hx-patch="{{ url_for('check', id=todo.id) }}"
             hx-target="#todo-task-{{ todo.id }}"
             hx-swap="innerHTML"
