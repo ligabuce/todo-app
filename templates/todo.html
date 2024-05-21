@@ -1,21 +1,15 @@
 <tr>
   <td>
-    <input type="checkbox" aria-label="Atzīmē"
-            hx-patch="{{ url_for('check', id=todo.id) }}"
-            hx-target="#todo-task-{{ todo.id }}"
-            hx-swap="innerHTML"
-            {% if todo.status %} checked {% endif %}>
+    <input type="checkbox" aria-label="Atzīmē" hx-patch="{{ url_for('check', id=todo.id) }}"
+      hx-target="#todo-task-{{ todo.id }}" hx-swap="innerHTML" {% if todo.status %} checked {% endif %} />
   </td>
-  <td id="todo-task-{{ todo.id }}">
-    {% include 'todo_task.html' %}
-  </td>
+  <td id="todo-task-{{ todo.id }}">{% include 'todo_task.html' %}</td>
   <td>
     <form hx-boost="false" action="{{ url_for('edit', id=todo.id) }}" data-turbo-frame="todo-edit-{{ todo.id }}">
       <button type="submit" class="change">Labot</button>
     </form>
-    <button hx-delete="{{ url_for('delete', id=todo.id) }}"
-            hx-confirm="Vai tiešām vēlies dzēst šo uzdevumu?"
-            hx-target="body">
+    <button hx-delete="{{ url_for('delete', id=todo.id) }}" hx-confirm="Vai tiešām vēlies dzēst šo uzdevumu?"
+      hx-target="body">
       Dzēst
     </button>
   </td>

@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html lang="lv">
-  <head>
-    <title>To Do App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Darāmo darbu pārvaldības lietojumprogrammas prototips, Darba autors: Līga Buce">
-    <link rel="stylesheet" href="/static/style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/htmx.org/dist/htmx.min.js" defer></script>
-    {{ turbo() }}
-  </head>
-  <body hx-boost="true">
-    <main>
-      <header>
-        <h1>Prototips</h1>
-        <p>Tīmekļa lietojumprogramma izstrādāta ar Flask, htmx un Hotwire</p>
-      </header>
 
-      <hr />
-      <form action="{{ url_for('add') }}" method="POST">
-        <input type="text" name="task" aria-label="Pievieno uzdevumu"/>
-        <button type="submit">Pievienot</button>
-      </form>
+<head>
+  <title>To Do App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Darāmo darbu pārvaldības lietojumprogrammas prototips, Darba autors: Līga Buce">
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/htmx.org/dist/htmx.min.js" defer></script>
+</head>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Status</th>
-            <th>Uzdevums</th>
-            <th>Darbības</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for todo in todos %} {% include 'todo.html' %} {% endfor %}
-        </tbody>
-      </table>
-    </main>
-  </body>
+<body hx-boost="true">
+  <main>
+    <header>
+      <h1>Prototips</h1>
+      <p>Tīmekļa lietojumprogramma izstrādāta ar Flask, htmx un Hotwire</p>
+    </header>
+
+    <hr />
+    <form action="{{ url_for('add') }}" method="POST">
+      <input type="text" name="task" aria-label="Pievieno uzdevumu" />
+      <button type="submit">Pievienot</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>Uzdevums</th>
+          <th>Darbības</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for todo in todos %} {% include 'todo.html' %} {% endfor %}
+      </tbody>
+    </table>
+  </main>
+</body>
+{{ turbo() }}
 </html>
